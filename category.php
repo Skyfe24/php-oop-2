@@ -30,16 +30,20 @@ Topini di peluche Trixie
 https://arcaplanet.vtexassets.com/arquivos/ids/223852/trixie-gatto-gioco-active-mouse-peluche.jpg                           -->
 
 <?php
-class Products
+class Category
+
 {
  // Variabili d'istanza o prorpietà
- public $genre;
- public $length;
- public $title;
+ public $name;
 
  // costruttore : scelgo i parametri minimi di costruzione posso dargli il nome che voglio anche lo stesso delle variabili
- public function __construct($bloccodati1, $bloccodati2, $bloccodati3)
- {$this-> genre = $bloccodati1; $this-> length = $bloccodati2; $this-> title = $bloccodati3;
+ // perchè prima facevamo {$this-> genre = $bloccodati1;} e ora facciamo {$this->setName($name); ?????????????????????????????????????????????????????????????????????????????????????
+
+
+
+ public function __construct($bloccodati1)
+ {$this->setName($name);
+
 
 
 }
@@ -48,29 +52,14 @@ class Products
 
 
  // Metodi (funzioni dentro gli oggetti)
-public function presentazioneOggi(){
-    echo 'Buonasera telespettatori, vi annunciamo che andrà ora in onda' . $this->title;
+public function getName(){
+    return $this->name;
     }
-public function presentazioneDomani(){
-    echo 'Buonasera telespettatori, abbiamo il piacere di anticiparvi 
-        che domani sera trasmetteremo il film' . $this->title;
+public function setName(): self{
+     $this->name = $name;
+     return $this;
     }
-
-
 }
 
-$orainonda = new Movie("Storico", "2 ore e 5 minuti", "Caccia all'Ottobre Rosso");
-$domaniserainTv = new Movie("Commedia", "1 ora e 48 minuti", "Mamma ho Perso l'Aereo" );
 
-$orainonda-> title = "Caccia all'Ottobre Rosso";
-$domaniserainTv-> title = "Mamma ho Perso l'Aereo";
-$orainonda-> genre = "Storico";
-$domaniserainTv-> genre = "Commedia";
-$orainonda-> length = "2 ore e 5 minuti";
-$domaniserainTv-> length = "1 ora e 48 minuti";
-
-$orainonda -> presentazioneOggi();
-$domaniserainTv -> presentazioneDomani();
-
-var_dump($orainonda);
-var_dump($domaniserainTv);
+ ?>
